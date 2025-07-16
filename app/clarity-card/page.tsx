@@ -10,6 +10,7 @@ import { Label } from "@/components/ui/label";
 
 export default function ClarityCardPage() {
   const [formData, setFormData] = useState({
+    email: "",
     role: "",
     industry: "",
     workflow: "",
@@ -25,6 +26,11 @@ export default function ClarityCardPage() {
 
   const isFormValid = Object.entries(formData).every(([key, value]) => {
     if (key === "consent") return value === true;
+    if (key === "email") {
+      // Basic email validation
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailRegex.test(value.toString().trim());
+    }
     return value.toString().trim() !== "";
   });
 
@@ -55,6 +61,20 @@ export default function ClarityCardPage() {
 
           {/* Form */}
           <form className="space-y-3 pb-8">
+            {/* Email Field */}
+            <div className="mb-3">
+              <Label className="block mb-2 font-sans text-[12px] text-[#444] tracking-[-0.25px] font-semibold">
+                Email Address
+              </Label>
+              <Input
+                type="email"
+                className="h-12 border-0 border-b border-gray-200 bg-white rounded-none focus:border-gray-400 focus:ring-0 font-sans text-[14px] font-normal text-[#3a3a3a]"
+                placeholder="your.email@example.com"
+                value={formData.email}
+                onChange={(e) => handleInputChange("email", e.target.value)}
+              />
+            </div>
+
             {/* Role Field */}
             <div className="mb-3">
               <Label className="block mb-2 font-sans text-[12px] text-[#444] tracking-[-0.25px] font-semibold">
