@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { clarityFormSchema, ClarityFormData } from "@/lib/clarityFormSchema";
-import { z, ZodError } from "zod";
 
 export function useClarityForm() {
   const [formData, setFormData] = useState<ClarityFormData>({
@@ -28,19 +27,18 @@ export function useClarityForm() {
   };
 
   const validate = (): boolean => {
-    try {
-      clarityFormSchema.parse(formData);
+    const result = clarityFormSchema.safeParse(formData);
+    
+    if (result.success) {
       setErrors({});
       return true;
-    } catch (err) {
-      if (err instanceof ZodError) {
-        const fieldErrors: typeof errors = {};
-        err.errors.forEach((e) => {
-          const key = e.path[0] as keyof ClarityFormData;
-          fieldErrors[key] = e.message;
-        });
-        setErrors(fieldErrors);
-      }
+    } else {
+      const fieldErrors: typeof errors = {};
+      result.error.errors.forEach((e) => {
+        const key = e.path[0] as keyof ClarityFormData;
+        fieldErrors[key] = e.message;
+      });
+      setErrors(fieldErrors);
       return false;
     }
   };

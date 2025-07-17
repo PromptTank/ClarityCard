@@ -1,5 +1,7 @@
 "use client";
 
+import { useRouter } from 'next/navigation';
+import { useState } from 'react';
 import { Header } from "@/components/header";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -9,11 +11,46 @@ import { Label } from "@/components/ui/label";
 import { useClarityForm } from "@/hooks/useClarityForm";
 
 export default function ClarityCardPage() {
+  const router = useRouter();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const { formData, errors, handleChange, handleSubmit } = useClarityForm();
 
-  const onSubmit = (data: typeof formData) => {
-    // TODO: send data to your API
-    console.log("Form Submitted:", data);
+  const onSubmit = async (data: typeof formData) => {
+    setIsSubmitting(true);
+    setSubmitError(null);
+    
+    try {
+      const response = await fetch('/api/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        let errorMessage = 'Failed to submit form';
+        try {
+          // Try to parse error as JSON
+          const errorData = await response.json();
+          errorMessage = errorData.error || errorData.message || errorMessage;
+        } catch (e) {
+          // If response is not JSON, use status text
+          errorMessage = response.statusText || errorMessage;
+        }
+        throw new Error(errorMessage);
+      }
+      
+      // Redirect to confirmation page on success
+      router.push('/confirmation');
+      
+    } catch (error) {
+      console.error('Submission error:', error);
+      setSubmitError(error instanceof Error ? error.message : 'Failed to submit form');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -177,16 +214,22 @@ export default function ClarityCardPage() {
 
             {/* Submit Button */}
             <div className="pt-6 text-center">
+              {submitError && (
+                <div className="mb-4 p-4 bg-red-50 text-red-600 rounded-lg text-sm">
+                  {submitError}
+                </div>
+              )}
               <Button
                 type="submit"
+                disabled={isSubmitting}
                 className={`
-                  rounded-lg group relative transition-all duration-300 ease-out hover:cursor-pointer
-                  hover:scale-[1.02] active:scale-[0.98] py-12 
-               
+                  rounded-lg group relative transition-all duration-300 ease-out
+                  hover:scale-[1.02] active:scale-[0.98] py-12 w-full
+                  ${isSubmitting ? 'opacity-70 cursor-not-allowed' : 'hover:cursor-pointer'}
                 `}
               >
                 <div className="flex flex-col items-center justify-center gap-2">
-                  <div className="">Break Down My Workflow</div>
+                  <div className="">{isSubmitting ? 'Submitting...' : 'Break Down My Workflow'}</div>
                   <div className="">
                     Includes a free 20-minute call to walk through what's
                     slowing you down.

@@ -15,3 +15,19 @@ export const clarityFormSchema = z.object({
 });
 
 export type ClarityFormData = z.infer<typeof clarityFormSchema>;
+
+export interface AirtableRecord {
+  id: string;
+  createdTime: string;
+  fields: {
+    'Email': string;
+    'Role': string;
+    'Industry': string;
+    'Workflow': string;
+    'Frequency': string;
+    'Tools': string;
+    'Pain Point': string;
+    'Consent': boolean;
+    'Status'?: string;
+  };
+}
