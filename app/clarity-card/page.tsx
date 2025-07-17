@@ -1,192 +1,188 @@
 "use client";
 
-import { useState } from "react";
 import { Header } from "@/components/header";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
+import { useClarityForm } from "@/hooks/useClarityForm";
 
 export default function ClarityCardPage() {
-  const [formData, setFormData] = useState({
-    email: "",
-    role: "",
-    industry: "",
-    workflow: "",
-    frequency: "",
-    tools: "",
-    painPoint: "",
-    consent: false,
-  });
+  const { formData, errors, handleChange, handleSubmit } = useClarityForm();
 
-  const handleInputChange = (field: string, value: string | boolean) => {
-    setFormData((prev) => ({ ...prev, [field]: value }));
+  const onSubmit = (data: typeof formData) => {
+    // TODO: send data to your API
+    console.log("Form Submitted:", data);
   };
-
-  const isFormValid = Object.entries(formData).every(([key, value]) => {
-    if (key === "consent") return value === true;
-    if (key === "email") {
-      // Basic email validation
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      return emailRegex.test(value.toString().trim());
-    }
-    return value.toString().trim() !== "";
-  });
 
   return (
     <div className="min-h-screen">
       <Header />
-
       <div className="min-h-screen relative pt-20">
-        {/* Gradient Overlay */}
         <div className="absolute inset-0" />
-
-        {/* Content */}
         <div className="relative z-10 max-w-xl mx-auto px-8 pt-12">
-          {/* Header */}
+          {/* Header Section */}
           <div className="text-center mb-16">
             <p className="mb-4 uppercase font-sans text-[12px] text-[#666] tracking-[0.8px] leading-[1.3] font-medium">
               Engineered by Google-trained AI strategists
             </p>
-
             <h1 className="mb-5 font-sans text-[42px] text-[#1a1a1a] tracking-[-0.025em] leading-[1.2] font-bold">
               Clarity Card™
             </h1>
-
             <p className="mx-auto max-w-lg font-sans text-[18px] text-[#2a2a2a] tracking-[-0.01em] leading-[1.5] font-medium">
               AI doesn't know your workflow. PromptTANK does
             </p>
           </div>
 
           {/* Form */}
-          <form className="space-y-3 pb-8">
-            {/* Email Field */}
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-3 pb-8">
+            {/** Email **/}
             <div className="mb-3">
-              <Label className="block mb-2 font-sans text-[12px] text-[#444] tracking-[-0.25px] font-semibold">
+              <Label className="block mb-2 font-sans text-[12px] text-[#444] font-semibold">
                 Email Address
               </Label>
               <Input
                 type="email"
-                className="h-12 border-0 border-b border-gray-200 bg-white rounded-none focus:border-gray-400 focus:ring-0 font-sans text-[14px] font-normal text-[#3a3a3a]"
+                className="h-12 w-full border-0 border-b border-gray-200 bg-white rounded-none focus:border-gray-400 focus:ring-0 font-sans text-[14px] font-normal text-[#3a3a3a]"
                 placeholder="your.email@example.com"
                 value={formData.email}
-                onChange={(e) => handleInputChange("email", e.target.value)}
+                onChange={(e) => handleChange("email", e.target.value)}
               />
+              {errors.email && (
+                <p className="mt-1 text-red-500 text-sm">{errors.email}</p>
+              )}
             </div>
 
-            {/* Role Field */}
+            {/** Role **/}
             <div className="mb-3">
-              <Label className="block mb-2 font-sans text-[12px] text-[#444] tracking-[-0.25px] font-semibold">
+              <Label className="block mb-2 font-sans text-[12px] text-[#444] font-semibold">
                 Your Role / Job Title
               </Label>
               <Input
-                className="h-12 border-0 border-b border-gray-200 bg-white rounded-none focus:border-gray-400 focus:ring-0 font-sans text-[14px] font-normal text-[#3a3a3a]"
+                className="h-12 w-full border-0 border-b border-gray-200 bg-white rounded-none focus:border-gray-400 focus:ring-0 font-sans text-[14px] font-normal text-[#3a3a3a]"
                 placeholder="e.g. Founder — I'm the bottleneck and the backstop"
                 value={formData.role}
-                onChange={(e) => handleInputChange("role", e.target.value)}
+                onChange={(e) => handleChange("role", e.target.value)}
               />
+              {errors.role && (
+                <p className="mt-1 text-red-500 text-sm">{errors.role}</p>
+              )}
             </div>
 
-            {/* Industry Field */}
+            {/** Industry **/}
             <div className="mb-3">
-              <Label className="block mb-2 font-sans text-[12px] text-[#444] tracking-[-0.25px] font-semibold">
+              <Label className="block mb-2 font-sans text-[12px] text-[#444] font-semibold">
                 Industry / Sector
               </Label>
               <Input
-                className="h-12 border-0 border-b border-gray-200 bg-white rounded-none focus:border-gray-400 focus:ring-0 font-sans text-[14px] font-normal text-[#3a3a3a]"
+                className="h-12 w-full border-0 border-b border-gray-200 bg-white rounded-none focus:border-gray-400 focus:ring-0 font-sans text-[14px] font-normal text-[#3a3a3a]"
                 placeholder="e.g. Online education — group coaching for creatives"
                 value={formData.industry}
-                onChange={(e) => handleInputChange("industry", e.target.value)}
+                onChange={(e) => handleChange("industry", e.target.value)}
               />
+              {errors.industry && (
+                <p className="mt-1 text-red-500 text-sm">{errors.industry}</p>
+              )}
             </div>
 
             {/* Workflow Field */}
             <div className="mb-3">
-              <Label className="block mb-2 font-sans text-[12px] text-[#444] tracking-[-0.25px] font-semibold">
+              <Label className="block mb-2 font-sans text-[12px] text-[#444] font-semibold">
                 Workflow to Improve or Delegate
               </Label>
               <Input
-                className="h-12 border-0 border-b border-gray-200 bg-white rounded-none focus:border-gray-400 focus:ring-0 font-sans text-[14px] font-normal text-[#3a3a3a]"
-                placeholder="e.g. Lead follow-up after first calls that vanish"
+                className="h-12 w-full border-0 border-b border-gray-200 bg-white rounded-none focus:border-gray-400 focus:ring-0 font-sans text-[14px] text-[#3a3a3a]"
+                placeholder="e.g. Lead follow‑up after first calls that vanish"
                 value={formData.workflow}
-                onChange={(e) => handleInputChange("workflow", e.target.value)}
+                onChange={(e) => handleChange("workflow", e.target.value)}
               />
+              {errors.workflow && (
+                <p className="mt-1 text-red-500 text-sm">{errors.workflow}</p>
+              )}
             </div>
 
             {/* Frequency Field */}
             <div className="mb-3">
-              <Label className="block mb-2 font-sans text-[12px] text-[#444] tracking-[-0.25px] font-semibold">
+              <Label className="block mb-2 font-sans text-[12px] text-[#444] font-semibold">
                 How Often You Do This
               </Label>
               <Input
-                className="h-12 border-0 border-b border-gray-200 bg-white rounded-none focus:border-gray-400 focus:ring-0 font-sans text-[14px] font-normal text-[#3a3a3a]"
+                className="h-12 w-full border-0 border-b border-gray-200 bg-white rounded-none focus:border-gray-400 focus:ring-0 font-sans text-[14px] text-[#3a3a3a]"
                 placeholder="e.g. Daily — or should, if I had the bandwidth"
                 value={formData.frequency}
-                onChange={(e) => handleInputChange("frequency", e.target.value)}
+                onChange={(e) => handleChange("frequency", e.target.value)}
               />
+              {errors.frequency && (
+                <p className="mt-1 text-red-500 text-sm">{errors.frequency}</p>
+              )}
             </div>
 
             {/* Tools Field */}
             <div className="mb-3">
-              <Label className="block mb-2 font-sans text-[12px] text-[#444] tracking-[-0.25px] font-semibold">
+              <Label className="block mb-2 font-sans text-[12px] text-[#444] font-semibold">
                 Tools or Platforms You Use Today
               </Label>
               <Input
-                className="h-12 border-0 border-b border-gray-200 bg-white rounded-none focus:border-gray-400 focus:ring-0 font-sans text-[14px] font-normal text-[#3a3a3a]"
-                placeholder="e.g. Gmail, Calendly, half-broken Zapier flows"
+                className="h-12 w-full border-0 border-b border-gray-200 bg-white rounded-none focus:border-gray-400 focus:ring-0 font-sans text-[14px] text-[#3a3a3a]"
+                placeholder="e.g. Gmail, Calendly, half‑broken Zapier flows"
                 value={formData.tools}
-                onChange={(e) => handleInputChange("tools", e.target.value)}
+                onChange={(e) => handleChange("tools", e.target.value)}
               />
+              {errors.tools && (
+                <p className="mt-1 text-red-500 text-sm">{errors.tools}</p>
+              )}
             </div>
 
-            {/* Pain Point Field */}
+            {/** Pain Point **/}
             <div className="mb-3">
-              <Label className="block mb-2 font-sans text-[12px] text-[#444] tracking-[-0.25px] font-semibold">
+              <Label className="block mb-2 font-sans text-[12px] text-[#444] font-semibold">
                 Biggest Pain Point
               </Label>
-              <p className="mb-2 font-sans text-[13px] text-[#666] tracking-[0.02em] font-normal italic">
+              <p className="mb-2 font-sans text-[13px] text-[#666] italic">
                 Write freely. Clarity sharpens with context. No character limit.
               </p>
               <Textarea
-                className="min-h-24 border-0 border-b border-gray-200 bg-white rounded-none resize-none focus:border-gray-400 focus:ring-0 font-sans text-[14px] font-normal text-[#3a3a3a]"
-                placeholder="e.g., I copy info between Gmail, Notion, and ClickUp, and always forget to update one of them. I waste time digging through old threads to confirm next steps. It's manual, error-prone, and I can't delegate it because it only lives in my head."
+                className="min-h-24 w-full border-0 border-b border-gray-200 bg-white rounded-none resize-none focus:border-gray-400 focus:ring-0 font-sans text-[14px] font-normal text-[#3a3a3a]"
+                placeholder="Describe your main pain..."
                 value={formData.painPoint}
-                onChange={(e) => handleInputChange("painPoint", e.target.value)}
+                onChange={(e) => handleChange("painPoint", e.target.value)}
               />
+              {errors.painPoint && (
+                <p className="mt-1 text-red-500 text-sm">{errors.painPoint}</p>
+              )}
             </div>
 
-            {/* Consent Checkbox */}
+            {/** Consent **/}
             <div className="flex items-start space-x-3 pt-4 mb-2">
               <Checkbox
                 id="consent"
                 checked={formData.consent}
-                onCheckedChange={(checked) =>
-                  handleInputChange("consent", checked as boolean)
-                }
-                className="h-4 w-4 mt-0.5"
+                onCheckedChange={(checked) => {
+                  // Convert Checkbox's checked state to boolean
+                  handleChange("consent", !!checked);
+                }}
+                className="mt-1 h-4 w-4"
               />
               <Label
                 htmlFor="consent"
-                className="leading-5 font-sans text-[14px] text-[#666] font-normal"
+                className="font-sans text-[14px] text-[#666]"
               >
                 I know this isn't legal or medical advice — just clarity.
               </Label>
             </div>
+            {errors.consent && (
+              <p className="mt-1 text-red-500 text-sm">{errors.consent}</p>
+            )}
 
             {/* Submit Button */}
             <div className="pt-6 text-center">
               <Button
                 type="submit"
-                disabled={!isFormValid}
                 className={`
                   rounded-lg group relative transition-all duration-300 ease-out hover:cursor-pointer
                   hover:scale-[1.02] active:scale-[0.98] py-12 
-                  ${
-                    isFormValid
-                      ? "text-white bg-gray-900 cursor-pointer"
-                      : "text-white bg-gray-900 cursor-not-allowed"
-                  }
+               
                 `}
               >
                 <div className="flex flex-col items-center justify-center gap-2">
