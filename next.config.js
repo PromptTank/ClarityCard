@@ -3,9 +3,9 @@ const nextConfig = {
   images: {
     domains: ['vercel.com'],
   },
-  // Ensure CSS is properly loaded
+  // Disable experimental CSS optimization
   experimental: {
-    optimizeCss: true,
+    optimizeCss: false,
   },
   // Enable React Strict Mode
   reactStrictMode: true,
@@ -21,6 +21,8 @@ const nextConfig = {
   },
   // Ensure CSS is properly extracted in production
   productionBrowserSourceMaps: true,
+  // Disable CSS optimization that's causing issues
+  optimizeFonts: false,
 };
 
 module.exports = nextConfig;
