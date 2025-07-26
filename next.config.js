@@ -21,8 +21,6 @@ const nextConfig = {
   },
   // Ensure CSS is properly extracted in production
   productionBrowserSourceMaps: true,
-  // Disable CSS optimization that's causing issues
-  optimizeFonts: false,
 };
 
 module.exports = nextConfig;
