@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import "../app/globals.css";
 import styles from "./styles/background.module.css";
 
 export const metadata: Metadata = {
@@ -23,9 +23,7 @@ export default function RootLayout({
       </head>
       <body className="relative min-h-screen bg-white dark:bg-gray-900">
         <div className={styles.background}></div>
-        <div className="relative z-0">
-          {children}
-        </div>
+        <div className="relative z-0">{children}</div>
       </body>
     </html>
   );
