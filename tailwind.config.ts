@@ -11,7 +11,9 @@ const config: Config = {
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
     "./node_modules/flowbite-react/**/*.js",
     "./node_modules/@tremor/**/*.{js,ts,jsx,tsx}",
+    "./styles/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  important: true, // Ensure styles take precedence
   theme: {
   	extend: {
   		colors: {
