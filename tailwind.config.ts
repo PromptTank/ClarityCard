@@ -1,27 +1,27 @@
-import type { Config } from "tailwindcss";
-
-// all in fixtures is set to tailwind v3 as interims solutions
+import type { Config } from 'tailwindcss';
 
 const config: Config = {
-    darkMode: ["class"],
-    content: [
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/**/*.{js,ts,jsx,tsx,mdx}",
-    "./node_modules/flowbite-react/**/*.js",
-    "./node_modules/@tremor/**/*.{js,ts,jsx,tsx}",
-    "./styles/**/*.{js,ts,jsx,tsx,mdx}",
+  content: [
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+    './styles/**/*.{js,ts,jsx,tsx,mdx}',
   ],
-  important: true, // Ensure styles take precedence
+  darkMode: 'class',
   theme: {
-  	extend: {
-  		colors: {
-  			background: 'hsl(var(--background))',
-  			foreground: 'hsl(var(--foreground))',
-  			card: {
-  				DEFAULT: 'hsl(var(--card))',
-  				foreground: 'hsl(var(--card-foreground))'
+    container: {
+      center: true,
+      padding: '2rem',
+      screens: {
+        '2xl': '1400px',
+      },
+    },
+    extend: {
+      colors: {
+        background: 'hsl(var(--background))',
+        foreground: 'hsl(var(--foreground))',
+        card: {
+          DEFAULT: 'hsl(var(--card))',
+          foreground: 'hsl(var(--card-foreground))'
   			},
   			popover: {
   				DEFAULT: 'hsl(var(--popover))',
