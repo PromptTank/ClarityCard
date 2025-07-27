@@ -7,8 +7,8 @@ export default function AboutPage() {
     <div className="min-h-screen">
       <Header />
 
-      <main className="pt-24">
-        <div className="max-w-4xl mx-auto px-8">
+      <main className="pt-24 px-4 sm:px-6 md:px-8">
+        <div className="max-w-4xl mx-auto bg-white/90 backdrop-blur-sm rounded-xl shadow-lg p-8 mb-12 relative z-10">
           {/* Company Header */}
           <div className="text-center py-16">
             <h1
@@ -22,31 +22,43 @@ export default function AboutPage() {
                 letterSpacing: "-0.02em",
               }}
             >
-              PromptTANK LLC
+              PromptTANK™
             </h1>
 
             <p
-              className="text-gray-600 max-w-2xl mx-auto"
+              className="text-gray-600 max-w-2xl mx-auto mb-2"
               style={{
                 fontFamily:
                   '"SF Pro Display", -apple-system, BlinkMacSystemFont, system-ui, sans-serif',
-                fontSize: "18px",
-                fontWeight: "400",
+                fontSize: "20px",
+                fontWeight: "500",
                 lineHeight: "1.5",
                 letterSpacing: "-0.01em",
               }}
             >
-              We bridge the gap between AI capability and human workflow
-              reality.
+              AI Clarity for Leaders
+            </p>
+            <p
+              className="text-gray-500 max-w-2xl mx-auto"
+              style={{
+                fontFamily:
+                  '"SF Pro Display", -apple-system, BlinkMacSystemFont, system-ui, sans-serif',
+                fontSize: "16px",
+                fontWeight: "400",
+                lineHeight: "1.5",
+              }}
+            >
+              Education | Guidance | Teams
             </p>
           </div>
 
           {/* Team Bios */}
           <div className="py-16">
-            <div className="grid md:grid-cols-2 gap-16 max-w-4xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               {/* Brian */}
-              <div className="text-center">
-                <div className="w-24 h-24 mx-auto mb-6 overflow-hidden rounded-full">
+              <div className="text-center bg-white/80 p-6 rounded-lg shadow-sm">
+
+                <div className="w-32 h-40 mx-auto mb-6 overflow-hidden rounded-lg shadow-md">
                   <img 
                     src="/brian.png" 
                     alt="Brian's profile picture" 
@@ -134,8 +146,9 @@ export default function AboutPage() {
               </div>
 
               {/* Dan */}
-              <div className="text-center">
-                <div className="w-24 h-24 mx-auto mb-6 overflow-hidden rounded-full">
+              <div className="text-center bg-white/80 p-6 rounded-lg shadow-sm">
+
+                <div className="w-32 h-40 mx-auto mb-6 overflow-hidden rounded-lg shadow-md">
                   <img 
                     src="/dan.png" 
                     alt="Dan's profile picture" 
@@ -225,8 +238,8 @@ export default function AboutPage() {
           </div>
 
           {/* Soft CTA */}
-          <div className="text-center py-16">
-            <div className="max-w-lg mx-auto">
+          <div className="text-center py-12">
+            <div className="max-w-lg mx-auto bg-white/80 p-8 rounded-lg shadow-sm">
               <p
                 className="mb-8 text-gray-600"
                 style={{
@@ -256,7 +269,7 @@ export default function AboutPage() {
           </div>
 
           {/* Spacer for breathing room */}
-          <div className="py-12"></div>
+          <div className="py-6"></div>
         </div>
       </main>
     </div>
