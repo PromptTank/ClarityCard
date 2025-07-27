@@ -14,9 +14,9 @@ export default function ClarityCardPage() {
       <main className="pt-24">
         <div className="max-w-4xl mx-auto px-8">
           {/* Hero Section */}
-          <div className="text-center py-20">
+          <div className="text-center bg-white/80 rounded-lg shadow-sm mx-auto my-8 p-10">
             {/* Certificate Badge */}
-            <div className="mb-12 flex justify-center">
+            <div className="mb-10 flex justify-center">
               <div className="w-32 h-32 rounded-full overflow-hidden">
                 <Image
                   src="/cert.png"
@@ -61,7 +61,7 @@ export default function ClarityCardPage() {
 
             {/* Second Subheading */}
             <p
-              className="mb-8 text-gray-600 max-w-xl mx-auto"
+              className="mb-12 text-gray-600 max-w-xl mx-auto"
               style={{
                 fontFamily:
                   '"SF Pro Display", -apple-system, BlinkMacSystemFont, system-ui, sans-serif',
@@ -74,22 +74,36 @@ export default function ClarityCardPage() {
               Education | Guidance | Teams
             </p>
 
-            {/* Ready to see CTA */}
+            {/* CTA Section */}
+            <div className="mt-8 mb-2 py-6 border-t border-gray-100">
+              <p
+                className="mb-8 text-gray-600"
+                style={{
+                  fontFamily:
+                    '"SF Pro Display", -apple-system, BlinkMacSystemFont, system-ui, sans-serif',
+                  fontSize: "18px",
+                  fontWeight: "400",
+                  lineHeight: "1.5",
+                }}
+              >
+                Ready to see what's slowing you down?
+              </p>
 
-            {/* CTA Button */}
-            <div className="mb-2">
-              <Link href="/clarity-card">
-                <Button
-                  className="px-8 py-3 text-base font-medium bg-gray-900 hover:bg-gray-800 text-white rounded-lg transition-all duration-200"
-                  style={{
-                    fontFamily:
-                      '"SF Pro Display", -apple-system, BlinkMacSystemFont, system-ui, sans-serif',
-                    letterSpacing: "-0.01em",
-                  }}
-                >
-                  Get Your Clarity Card™
-                </Button>
-              </Link>
+              {/* CTA Button */}
+              <div>
+                <Link href="/clarity-card">
+                  <Button
+                    className="px-8 py-3 text-base font-medium bg-gray-900 hover:bg-gray-800 text-white rounded-lg transition-all duration-200"
+                    style={{
+                      fontFamily:
+                        '"SF Pro Display", -apple-system, BlinkMacSystemFont, system-ui, sans-serif',
+                      letterSpacing: "-0.01em",
+                    }}
+                  >
+                    Get Your Clarity Card™
+                  </Button>
+                </Link>
+              </div>
             </div>
           </div>
 

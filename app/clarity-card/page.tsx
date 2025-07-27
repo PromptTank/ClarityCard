@@ -59,6 +59,7 @@ export default function ClarityCardPage() {
       <div className="min-h-screen relative pt-20">
         <div className="absolute inset-0" />
         <div className="relative z-10 max-w-xl mx-auto px-8 pt-12">
+          <div className="bg-white/80 rounded-lg shadow-sm p-8 mb-8">
           {/* Header Section */}
           <div className="text-center mb-16">
             <p className="mb-4 uppercase font-sans text-[12px] text-[#666] tracking-[0.8px] leading-[1.3] font-medium">
@@ -247,8 +248,10 @@ export default function ClarityCardPage() {
             </div>
           </form>
 
+          </div>
+          
           {/* How It Works Section */}
-          <div className="mt-16 mb-8 pt-12 border-t border-[#ddd]">
+          <div className="mt-8 mb-8 pt-12 border-t border-[#ddd] bg-white/80 rounded-lg shadow-sm p-8">
             <h3 className="text-center mb-10 uppercase font-sans text-[12px] text-[#666] tracking-[0.15em] font-normal [font-variant:small-caps]">
               How It Works
             </h3>
