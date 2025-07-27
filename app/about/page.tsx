@@ -46,16 +46,12 @@ export default function AboutPage() {
             <div className="grid md:grid-cols-2 gap-16 max-w-4xl mx-auto">
               {/* Brian */}
               <div className="text-center">
-                <div className="w-24 h-24 bg-gray-100 rounded-full mx-auto mb-6 flex items-center justify-center">
-                  <span
-                    className="text-2xl font-light text-gray-600"
-                    style={{
-                      fontFamily:
-                        '"SF Pro Display", -apple-system, BlinkMacSystemFont, system-ui, sans-serif',
-                    }}
-                  >
-                    B
-                  </span>
+                <div className="w-24 h-24 mx-auto mb-6 overflow-hidden rounded-full">
+                  <img 
+                    src="/brian.png" 
+                    alt="Brian's profile picture" 
+                    className="object-cover w-full h-full"
+                  />
                 </div>
 
                 <h3
@@ -68,48 +64,83 @@ export default function AboutPage() {
                     letterSpacing: "-0.01em",
                   }}
                 >
-                  Brian
+                  C. Brian Smith
                 </h3>
+                <h4 className="mb-2 text-gray-700" style={{
+                  fontFamily: '"SF Pro Display", -apple-system, BlinkMacSystemFont, system-ui, sans-serif',
+                  fontSize: "16px",
+                  fontWeight: "500",
+                }}>
+                  Co-Founder, PromptTANK LLC
+                </h4>
 
-                <div className="space-y-3 text-gray-600">
+                <div className="space-y-2 text-gray-600 text-left">
                   <p
                     style={{
                       fontFamily:
                         '"SF Pro Display", -apple-system, BlinkMacSystemFont, system-ui, sans-serif',
-                      fontSize: "16px",
+                      fontSize: "15px",
                       fontWeight: "400",
                       lineHeight: "1.5",
                     }}
                   >
-                    Former Google AI researcher who spent three years training
-                    language models.
+                    • Yale-trained linguist (BA, 2001) and certified AI Consultant (IRLLC, 2025).
                   </p>
                   <p
                     style={{
                       fontFamily:
                         '"SF Pro Display", -apple-system, BlinkMacSystemFont, system-ui, sans-serif',
-                      fontSize: "16px",
+                      fontSize: "15px",
                       fontWeight: "400",
                       lineHeight: "1.5",
                     }}
                   >
-                    Now helps founders turn AI promises into workflow reality.
+                    • Supported Google Bard (Gemini) early language testing.
+                  </p>
+                  <p
+                    style={{
+                      fontFamily:
+                        '"SF Pro Display", -apple-system, BlinkMacSystemFont, system-ui, sans-serif',
+                      fontSize: "15px",
+                      fontWeight: "400",
+                      lineHeight: "1.5",
+                    }}
+                  >
+                    • Co-creator of the Clarity Ecosystem™ (Clarity Card™, Teardown™, Assessment™).
+                  </p>
+                  <p
+                    style={{
+                      fontFamily:
+                        '"SF Pro Display", -apple-system, BlinkMacSystemFont, system-ui, sans-serif',
+                      fontSize: "15px",
+                      fontWeight: "400",
+                      lineHeight: "1.5",
+                    }}
+                  >
+                    • Trained in modular and Agentic AI under Jules White (Vanderbilt, 2024).
+                  </p>
+                  <p
+                    style={{
+                      fontFamily:
+                        '"SF Pro Display", -apple-system, BlinkMacSystemFont, system-ui, sans-serif',
+                      fontSize: "15px",
+                      fontWeight: "400",
+                      lineHeight: "1.5",
+                    }}
+                  >
+                    • Creator of AI Stats & Vision (2023), guiding real-world enterprise AI adoption.
                   </p>
                 </div>
               </div>
 
               {/* Dan */}
               <div className="text-center">
-                <div className="w-24 h-24 bg-gray-100 rounded-full mx-auto mb-6 flex items-center justify-center">
-                  <span
-                    className="text-2xl font-light text-gray-600"
-                    style={{
-                      fontFamily:
-                        '"SF Pro Display", -apple-system, BlinkMacSystemFont, system-ui, sans-serif',
-                    }}
-                  >
-                    D
-                  </span>
+                <div className="w-24 h-24 mx-auto mb-6 overflow-hidden rounded-full">
+                  <img 
+                    src="/dan.png" 
+                    alt="Dan's profile picture" 
+                    className="object-cover w-full h-full"
+                  />
                 </div>
 
                 <h3
@@ -124,31 +155,69 @@ export default function AboutPage() {
                 >
                   Dan
                 </h3>
+                <h4 className="mb-2 text-gray-700" style={{
+                  fontFamily: '"SF Pro Display", -apple-system, BlinkMacSystemFont, system-ui, sans-serif',
+                  fontSize: "16px",
+                  fontWeight: "500",
+                }}>
+                  Co-Founder, PromptTANK LLC
+                </h4>
 
-                <div className="space-y-3 text-gray-600">
+                <div className="space-y-2 text-gray-600 text-left">
                   <p
                     style={{
                       fontFamily:
                         '"SF Pro Display", -apple-system, BlinkMacSystemFont, system-ui, sans-serif',
-                      fontSize: "16px",
+                      fontSize: "15px",
                       fontWeight: "400",
                       lineHeight: "1.5",
                     }}
                   >
-                    Operations strategist who's automated workflows for 200+
-                    companies.
+                    • Certified AI Consultant (IRLLC, 2025)
                   </p>
                   <p
                     style={{
                       fontFamily:
                         '"SF Pro Display", -apple-system, BlinkMacSystemFont, system-ui, sans-serif',
-                      fontSize: "16px",
+                      fontSize: "15px",
                       fontWeight: "400",
                       lineHeight: "1.5",
                     }}
                   >
-                    Specializes in finding the human bottlenecks AI can actually
-                    solve.
+                    • Trained in Agentic AI under Jules White (Vanderbilt)
+                  </p>
+                  <p
+                    style={{
+                      fontFamily:
+                        '"SF Pro Display", -apple-system, BlinkMacSystemFont, system-ui, sans-serif',
+                      fontSize: "15px",
+                      fontWeight: "400",
+                      lineHeight: "1.5",
+                    }}
+                  >
+                    • Certified in AI Leadership for Businesses by Lauren Vriens, Chief AI Officer (ex-Accenture, Revel)
+                  </p>
+                  <p
+                    style={{
+                      fontFamily:
+                        '"SF Pro Display", -apple-system, BlinkMacSystemFont, system-ui, sans-serif',
+                      fontSize: "15px",
+                      fontWeight: "400",
+                      lineHeight: "1.5",
+                    }}
+                  >
+                    • 20-year professional storyteller who speaks SEO, GPT, and ROI
+                  </p>
+                  <p
+                    style={{
+                      fontFamily:
+                        '"SF Pro Display", -apple-system, BlinkMacSystemFont, system-ui, sans-serif',
+                      fontSize: "15px",
+                      fontWeight: "400",
+                      lineHeight: "1.5",
+                    }}
+                  >
+                    • Advises executive teams on prompt engineering and LLM best practices
                   </p>
                 </div>
               </div>
