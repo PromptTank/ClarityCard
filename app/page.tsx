@@ -31,7 +31,7 @@ export default function ClarityCardPage() {
 
             {/* Main Headline */}
             <h1
-              className="mb-8 text-gray-900 max-w-3xl mx-auto"
+              className="mb-6 text-gray-900 max-w-3xl mx-auto"
               style={{
                 fontFamily:
                   '"SF Pro Display", -apple-system, BlinkMacSystemFont, system-ui, sans-serif',
@@ -41,29 +41,46 @@ export default function ClarityCardPage() {
                 letterSpacing: "-0.02em",
               }}
             >
-              Verified Proficiency in AI Consulting
+              PromptTANK™
             </h1>
 
             {/* Subheading */}
             <p
-              className="mb-16 text-gray-600 max-w-xl mx-auto"
+              className="mb-4 text-gray-700 max-w-xl mx-auto"
               style={{
                 fontFamily:
                   '"SF Pro Display", -apple-system, BlinkMacSystemFont, system-ui, sans-serif',
-                fontSize: "24px",
+                fontSize: "28px",
                 fontWeight: "400",
                 lineHeight: "1.4",
                 letterSpacing: "-0.01em",
               }}
             >
-              Google-trained. Workflow-obsessed.
+              AI Clarity for Leaders
             </p>
 
+            {/* Second Subheading */}
+            <p
+              className="mb-8 text-gray-600 max-w-xl mx-auto"
+              style={{
+                fontFamily:
+                  '"SF Pro Display", -apple-system, BlinkMacSystemFont, system-ui, sans-serif',
+                fontSize: "20px",
+                fontWeight: "400",
+                lineHeight: "1.4",
+                letterSpacing: "-0.01em",
+              }}
+            >
+              Education | Guidance | Teams
+            </p>
+
+            {/* Ready to see CTA */}
+
             {/* CTA Button */}
-            <div className="mb-12">
+            <div className="mb-2">
               <Link href="/clarity-card">
                 <Button
-                  className="px-12 py-6 text-lg font-medium bg-gray-900 hover:bg-gray-800 text-white rounded-lg transition-all duration-200 hover:scale-[1.02]"
+                  className="px-8 py-3 text-base font-medium bg-gray-900 hover:bg-gray-800 text-white rounded-lg transition-all duration-200"
                   style={{
                     fontFamily:
                       '"SF Pro Display", -apple-system, BlinkMacSystemFont, system-ui, sans-serif',
@@ -74,21 +91,6 @@ export default function ClarityCardPage() {
                 </Button>
               </Link>
             </div>
-
-            {/* Microcopy */}
-            <p
-              className="text-gray-500 max-w-md mx-auto"
-              style={{
-                fontFamily:
-                  '"SF Pro Display", -apple-system, BlinkMacSystemFont, system-ui, sans-serif',
-                fontSize: "16px",
-                fontWeight: "400",
-                lineHeight: "1.5",
-                fontStyle: "italic",
-              }}
-            >
-              We trained LLMs. Now we help humans catch up.
-            </p>
           </div>
 
           {/* Spacer for breathing room */}
