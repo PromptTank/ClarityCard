@@ -61,15 +61,18 @@ export default function ClarityCardPage() {
         <div className="relative z-10 max-w-xl mx-auto px-8 pt-12">
           <div className="bg-white/80 rounded-lg shadow-sm p-8 mb-8">
           {/* Header Section */}
-          <div className="text-center mb-16">
-            <p className="mb-4 uppercase font-sans text-[12px] text-[#666] tracking-[0.8px] leading-[1.3] font-medium">
-              Engineered by Google-trained AI strategists
-            </p>
-            <h1 className="mb-5 font-sans text-[42px] text-[#1a1a1a] tracking-[-0.025em] leading-[1.2] font-bold">
-              Clarity Card™
+          <div className="text-center mb-12">
+            <h1 className="mb-4 font-sans text-[42px] text-gray-900 tracking-[-0.025em] leading-[1.2] font-bold">
+              PromptTANK™
             </h1>
-            <p className="mx-auto max-w-lg font-sans text-[18px] text-[#2a2a2a] tracking-[-0.01em] leading-[1.5] font-medium">
-              AI doesn't know your workflow. PromptTANK does
+            <p className="mb-3 mx-auto max-w-lg font-sans text-[22px] text-gray-700 tracking-[-0.01em] leading-[1.4] font-medium">
+              AI Clarity for Leaders
+            </p>
+            <p className="mb-8 mx-auto max-w-lg font-sans text-[18px] text-gray-600 tracking-[-0.01em] leading-[1.5]">
+              Education | Guidance | Teams
+            </p>
+            <p className="mx-auto max-w-lg font-sans text-[16px] text-gray-600 tracking-[-0.01em] leading-[1.5] border-t border-gray-200 pt-6 font-medium">
+              Frustrated by vague AI advice? Answer 7 questions and get personalized clarity on what's slowing you down in 24 hours.
             </p>
           </div>
 
@@ -78,7 +81,7 @@ export default function ClarityCardPage() {
             {/** Email **/}
             <div className="mb-3">
               <Label className="block mb-2 font-sans text-[12px] text-[#444] font-semibold">
-                Email Address
+                Email
               </Label>
               <Input
                 type="email"
@@ -95,11 +98,11 @@ export default function ClarityCardPage() {
             {/** Role **/}
             <div className="mb-3">
               <Label className="block mb-2 font-sans text-[12px] text-[#444] font-semibold">
-                Your Role / Job Title
+                Your Role / Title
               </Label>
               <Input
                 className="h-12 w-full border-0 border-b border-gray-200 bg-white rounded-none focus:border-gray-400 focus:ring-0 font-sans text-[14px] font-normal text-[#3a3a3a]"
-                placeholder="e.g. Founder — I'm the bottleneck and the backstop"
+                placeholder="e.g. CEO, Head of Ops, Founder, VP Strategy"
                 value={formData.role}
                 onChange={(e) => handleChange("role", e.target.value)}
               />
@@ -111,11 +114,11 @@ export default function ClarityCardPage() {
             {/** Industry **/}
             <div className="mb-3">
               <Label className="block mb-2 font-sans text-[12px] text-[#444] font-semibold">
-                Industry / Sector
+                Industry
               </Label>
               <Input
                 className="h-12 w-full border-0 border-b border-gray-200 bg-white rounded-none focus:border-gray-400 focus:ring-0 font-sans text-[14px] font-normal text-[#3a3a3a]"
-                placeholder="e.g. Online education — group coaching for creatives"
+                placeholder="e.g. B2B SaaS, Life Sciences, Legal, Nonprofit"
                 value={formData.industry}
                 onChange={(e) => handleChange("industry", e.target.value)}
               />
@@ -127,11 +130,11 @@ export default function ClarityCardPage() {
             {/* Workflow Field */}
             <div className="mb-3">
               <Label className="block mb-2 font-sans text-[12px] text-[#444] font-semibold">
-                Workflow to Improve or Delegate
+                Where are things leaking time/money?
               </Label>
               <Input
                 className="h-12 w-full border-0 border-b border-gray-200 bg-white rounded-none focus:border-gray-400 focus:ring-0 font-sans text-[14px] text-[#3a3a3a]"
-                placeholder="e.g. Lead follow‑up after first calls that vanish"
+                placeholder="e.g. Repetitive proposals, scattered team input, content bottlenecks"
                 value={formData.workflow}
                 onChange={(e) => handleChange("workflow", e.target.value)}
               />
@@ -143,11 +146,11 @@ export default function ClarityCardPage() {
             {/* Frequency Field */}
             <div className="mb-3">
               <Label className="block mb-2 font-sans text-[12px] text-[#444] font-semibold">
-                How Often You Do This
+                What is your dream outcome? What do you wish ran smoother?
               </Label>
               <Input
                 className="h-12 w-full border-0 border-b border-gray-200 bg-white rounded-none focus:border-gray-400 focus:ring-0 font-sans text-[14px] text-[#3a3a3a]"
-                placeholder="e.g. Daily — or should, if I had the bandwidth"
+                placeholder="e.g. Hiring funnel, reporting, leadership prep, client comms"
                 value={formData.frequency}
                 onChange={(e) => handleChange("frequency", e.target.value)}
               />
@@ -159,11 +162,11 @@ export default function ClarityCardPage() {
             {/* Tools Field */}
             <div className="mb-3">
               <Label className="block mb-2 font-sans text-[12px] text-[#444] font-semibold">
-                Tools or Platforms You Use Today
+                Tools you already use (Optional)
               </Label>
               <Input
                 className="h-12 w-full border-0 border-b border-gray-200 bg-white rounded-none focus:border-gray-400 focus:ring-0 font-sans text-[14px] text-[#3a3a3a]"
-                placeholder="e.g. Gmail, Calendly, half‑broken Zapier flows"
+                placeholder="e.g. Slack, Notion, GDocs, Trello"
                 value={formData.tools}
                 onChange={(e) => handleChange("tools", e.target.value)}
               />
@@ -175,14 +178,14 @@ export default function ClarityCardPage() {
             {/** Pain Point **/}
             <div className="mb-3">
               <Label className="block mb-2 font-sans text-[12px] text-[#444] font-semibold">
-                Biggest Pain Point
+                What's your biggest friction right now?
               </Label>
               <p className="mb-2 font-sans text-[13px] text-[#666] italic">
-                Write freely. Clarity sharpens with context. No character limit.
+                No character limit. Speak freely — the sharper the context, the better.
               </p>
               <Textarea
                 className="min-h-24 w-full border-0 border-b border-gray-200 bg-white rounded-none resize-none focus:border-gray-400 focus:ring-0 font-sans text-[14px] font-normal text-[#3a3a3a]"
-                placeholder="Describe your main pain..."
+                placeholder="What's frustrating you most right now?"
                 value={formData.painPoint}
                 onChange={(e) => handleChange("painPoint", e.target.value)}
               />
@@ -223,18 +226,16 @@ export default function ClarityCardPage() {
               <Button
                 type="submit"
                 disabled={isSubmitting}
-                className={`
-                  rounded-lg group relative transition-all duration-300 ease-out
-                  hover:scale-[1.02] active:scale-[0.98] py-12 w-full
-                  ${isSubmitting ? 'opacity-70 cursor-not-allowed' : 'hover:cursor-pointer'}
-                `}
+                className="bg-gray-900 hover:bg-gray-800 text-white rounded-lg px-4 py-4 w-full transition-all duration-300 ease-out hover:shadow-md"
+                style={{ height: "auto" }}
               >
                 <div className="flex flex-col items-center justify-center gap-2">
-                  <div className="">{isSubmitting ? 'Submitting...' : 'Break Down My Workflow'}</div>
-                  <div className="">
-                    Includes a free 20-minute call to walk through what's
-                    slowing you down.
-                  </div>
+                  <span className="font-medium">
+                    {isSubmitting ? 'Submitting...' : 'Break Down My Workflow'}
+                  </span>
+                  <span className="text-xs text-center text-gray-200 max-w-[200px]">
+                    Includes a free 20-minute call
+                  </span>
                 </div>
               </Button>
 
