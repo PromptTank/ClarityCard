@@ -36,15 +36,15 @@ export default function AboutPage() {
                   />
                 </div>
 
-                <h3 className="mb-4 text-2xl font-normal tracking-tight text-gray-900">
+                <h3 className=" text-2xl font-normal tracking-tight text-gray-900">
                   C. Brian Smith
                 </h3>
-                <h4 className="mb-2 text-base font-medium text-gray-700">
-                  Co-Founder, PromptTANK LLC
-                </h4>
                 <p className="mb-4 text-sm text-gray-600">
                   brian@theprompttank.com
                 </p>
+                <h4 className="mb-2 text-base font-medium text-gray-700">
+                  Co-Founder, PromptTANK LLC
+                </h4>
 
                 <ul className="space-y-2 text-left text-[15px] leading-6 text-gray-600">
                   <li className="list-disc pl-5">
@@ -79,34 +79,38 @@ export default function AboutPage() {
                   />
                 </div>
 
-                <h3 className="mb-4 text-2xl font-normal tracking-tight text-gray-900">
+                <h3 className=" text-2xl font-normal tracking-tight text-gray-900">
                   Dan McCarthy
                 </h3>
-                <h4 className="mb-2 text-base font-medium text-gray-700">
-                  Co-Founder, PromptTANK LLC
-                </h4>
                 <p className="mb-4 text-sm text-gray-600">
                   dan@theprompttank.com
                 </p>
+                <h4 className="mb-2 text-base font-medium text-gray-700">
+                  Co-Founder, PromptTANK LLC
+                </h4>
 
                 <ul className="space-y-2 text-left text-[15px] leading-6 text-gray-600">
                   <li className="list-disc pl-5">
                     Certified AI Consultant (IRLLC, 2025)
                   </li>
                   <li className="list-disc pl-5">
-                    Trained in Agentic AI under Jules White (Vanderbilt)
+                    Certified in Advanced Prompt and Context Engineering, and
+                    Agentic AI Leadership under Jules White (Vanderbilt)
                   </li>
                   <li className="list-disc pl-5">
                     Certified in AI Leadership for Businesses by Lauren Vriens,
-                    Chief AI Officer (ex-Accenture, Revel)
+                    Chief AI Officer (ex-Accenture, Chief AI Officer at Revel)
                   </li>
                   <li className="list-disc pl-5">
-                    20-year professional storyteller who speaks SEO, GPT, and
-                    ROI
+                    20-year legacy and digital media strategist + professional
+                    content and brand storyteller who speaks SEO, GPT, and ROI
+                    for business success in the for-profit and non-profit
+                    sectors.
                   </li>
                   <li className="list-disc pl-5">
-                    Advises executive teams on prompt engineering and LLM best
-                    practices
+                    Advises executive teams on prompt engineering, automation
+                    pathways, and LLM best practices for businesses within
+                    regulated industries.
                   </li>
                 </ul>
               </div>
