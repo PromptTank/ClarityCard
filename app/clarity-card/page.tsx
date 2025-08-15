@@ -65,7 +65,7 @@ export default function ClarityCardPage() {
                 AI Clarity for Leaders
               </p>
               <p className="mx-auto mb-8 max-w-lg text-base leading-relaxed tracking-tight text-neutral-600">
-                Education | Strategy | Governance*
+                Education | Strategy | Governance
               </p>
               <p className="mx-auto max-w-lg border-t border-gray-200 pt-6 text-base font-medium leading-relaxed tracking-tight text-neutral-600">
                 Frustrated by vague AI advice? Answer 7 questions for tailored

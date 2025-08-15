@@ -19,7 +19,7 @@ export default function AboutPage() {
               AI Clarity for Leaders
             </p>
             <p className="mx-auto max-w-2xl text-base font-normal leading-relaxed text-gray-500">
-              Education | Strategy | Governance*
+              Education | Strategy | Governance
             </p>
           </div>
 

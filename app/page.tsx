@@ -40,9 +40,8 @@ export default function ClarityCardPage() {
 
             {/* Second Subheading */}
             <p className="mx-auto mb-8 max-w-xl text-[20px] font-normal leading-snug tracking-[-0.01em] text-gray-600">
-              Education | Strategy | Governance*
+              Education | Strategy | Governance
             </p>
-
 
             {/* CTA Section */}
             <div className="mt-8 mb-2 border-t border-gray-100 py-6">
@@ -64,21 +63,30 @@ export default function ClarityCardPage() {
           {/* Category Descriptions */}
           <div className="mx-auto max-w-3xl my-12 grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
             <div className="p-5 bg-white/80 rounded-lg shadow-sm">
-              <h3 className="mb-2 text-lg font-medium text-gray-800">Education</h3>
+              <h3 className="mb-2 text-lg font-medium text-gray-800">
+                Education
+              </h3>
               <p className="text-sm text-gray-600 leading-relaxed">
-                Learn AI fast. One-on-one tutorials on tools, LLM skills, and AI basics. Get operational in days, not months.
+                Learn AI fast. One-on-one tutorials on tools, LLM skills, and AI
+                basics. Get operational in days, not months.
               </p>
             </div>
             <div className="p-5 bg-white/80 rounded-lg shadow-sm">
-              <h3 className="mb-2 text-lg font-medium text-gray-800">Strategy</h3>
+              <h3 className="mb-2 text-lg font-medium text-gray-800">
+                Strategy
+              </h3>
               <p className="text-sm text-gray-600 leading-relaxed">
-                Cut the noise. We map your workflows to the right AI stack from 8,000+ tools, then guide in-house implementation.
+                Cut the noise. We map your workflows to the right AI stack from
+                8,000+ tools, then guide in-house implementation.
               </p>
             </div>
             <div className="p-5 bg-white/80 rounded-lg shadow-sm">
-              <h3 className="mb-2 text-lg font-medium text-gray-800">Governance</h3>
+              <h3 className="mb-2 text-lg font-medium text-gray-800">
+                Governance
+              </h3>
               <p className="text-sm text-gray-600 leading-relaxed">
-                Stay compliant. Patent-pending AI governance audits every output, logs decisions, and auto-fixes risky content.
+                Stay compliant. Patent-pending AI governance audits every
+                output, logs decisions, and auto-fixes risky content.
               </p>
             </div>
           </div>
