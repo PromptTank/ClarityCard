@@ -3,9 +3,9 @@ import "../app/globals.css";
 import styles from "./styles/background.module.css";
 
 export const metadata: Metadata = {
-  title: "v0 App",
-  description: "Created with v0",
-  generator: "v0.dev",
+  title: "PromptTANK™",
+  description: "AI Clarity for Leaders",
+  generator: "PromptTANK™",
 };
 
 export default function RootLayout({
