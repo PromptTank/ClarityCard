@@ -38,8 +38,8 @@ export default function ClarityCardPage() {
               AI Clarity for Leaders
             </p>
 
-            {/* Second Subheading */}
-            <p className="mx-auto mb-8 max-w-xl text-[20px] font-normal leading-snug tracking-[-0.01em] text-gray-600">
+            {/* Second Subheading - Responsive text size */}
+            <p className="mx-auto mb-8 max-w-xl text-base md:text-xl font-normal leading-snug tracking-[-0.01em] text-gray-600">
               Education | Strategy | Governance
             </p>
 
